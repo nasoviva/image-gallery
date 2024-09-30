@@ -3,6 +3,7 @@
 }
 
 body {
+  position: relative;
   font-family: "Arial", sans-serif;
   display: flex;
   flex-direction: column;
@@ -11,7 +12,7 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  min-width: 20rem;
+  min-width: 28rem;
   color: #9a2d2f;
 }
 
@@ -154,6 +155,70 @@ img {
   cursor: pointer;
 }
 
+.no-scroll-background {
+  display: none;
+  top: 0;
+  right: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(41, 41, 41, 0);
+  transition: background-color 0.5s linear;
+}
+
+.no-scroll-background.open {
+  display: block;
+  background-color: rgba(41, 41, 41, 0.6);
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.popap {
+  position: relative;
+  position: fixed;
+  top: 50%;
+  left: -200rem;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  width: 45rem;
+  height: 30rem;
+  border-radius: 9px;
+  background-position: center;
+  background-size: cover;
+}
+
+.popap.open {
+  left: 50%;
+}
+
+.popap-close {
+  position: absolute;
+  top: -28px;
+  left: 712px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  width: 2rem;
+  height: 2rem;
+  color: #9a2d2f;
+  background-color: #fff;
+  border-radius: 100%;
+  border: 1px solid #9a2d2f;
+  transition: 0.3s;
+}
+
+.popap-close:hover {
+  color: #fff;
+  border: 1px solid #9a2d2f;
+  background-color: #9a2d2f;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
 .footer-rslogo,
 .footer-git,
 .footer-year {
@@ -188,7 +253,7 @@ button:active .footer-img {
   justify-content: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .header-container {
     display: flex;
     flex-direction: column;
@@ -197,5 +262,29 @@ button:active .footer-img {
 
   .img-div {
     width: 48rem;
+  }
+
+  .popap {
+    width: 35rem;
+    height: 30rem;
+  }
+
+  .popap-close {
+    left: 551px;
+  }
+}
+
+@media (max-width: 40rem) {
+  .img-div {
+    width: 40rem;
+  }
+
+  .popap {
+    width: 25rem;
+    height: 20rem;
+  }
+
+  .popap-close {
+    left: 392px;
   }
 }
