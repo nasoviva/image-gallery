@@ -1,5 +1,5 @@
 <div align="center">
-  <h1><b>Image gallery</b></h1>
+  [Image gallery](https://github.com/nasoviva/image-gallery/blob/main/image-gallery/pages/index.html)
 </div>
 <br>
 <p align="center">App that displays photos from an API with a search feature that updates the displayed images based on the search query.</p>
